@@ -12,7 +12,7 @@ namespace STM32_Solar_Tracker_Control_Panel
         private int angle=0;
         
         
-        public Servo(int number, PictureBox pictureBox, Label label) : base(device_type.Servo, number,pictureBox,label)
+        public Servo(int number, PictureBox pictureBox, Label label) : base(device_type.SRV, number,pictureBox,label)
         {
             statusLabel.Text = "SERVO " + Number + " : ANGLE = " + angle;
         }

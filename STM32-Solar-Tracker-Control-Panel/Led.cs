@@ -11,7 +11,7 @@ namespace STM32_Solar_Tracker_Control_Panel
     {
         private bool state = false;
 
-        public Led(int number, PictureBox pictureBox, Label label) : base(device_type.Led, number, pictureBox, label)
+        public Led(int number, PictureBox pictureBox, Label label) : base(device_type.LED, number, pictureBox, label)
         {
             pictureBox.Image = Properties.Resources.led;
             statusLabel.Text = "LED" + Number + " = OFF";

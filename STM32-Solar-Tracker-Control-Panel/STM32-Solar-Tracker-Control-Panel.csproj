@@ -135,9 +135,6 @@
     <None Include="Resources\led.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\arm.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\led_on.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,7 +10,7 @@ namespace STM32_Solar_Tracker_Control_Panel
     {
 
         public int Value { get; private set; } = 0;
-        public Sensor(int number, Label label) : base(device_type.Sensor,number,null,label)
+        public Sensor(int number, Label label) : base(device_type.SEN,number,null,label)
         {
             statusLabel.Text = "SENSOR " + Number + " : VALUE = " + Value;
         }

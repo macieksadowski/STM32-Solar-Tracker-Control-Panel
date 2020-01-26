@@ -32,7 +32,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             int receiveDataValue = Convert.ToInt32(substrings2[1]);
             foreach (Device d in devices)
             {
-                if(receiveDataDeviceType == device_type.Led.ToString())
+                if(receiveDataDeviceType == device_type.LED.ToString())
                 {
                     if(d is ILed && d.Number == receiveDataDeviceNumber)
                     {
@@ -41,7 +41,7 @@ namespace STM32_Solar_Tracker_Control_Panel
                         break;
                     }
                 }
-                else if (receiveDataDeviceType == device_type.Servo.ToString())
+                else if (receiveDataDeviceType == device_type.SRV.ToString())
                 {
                     if (d is IServo && d.Number == receiveDataDeviceNumber)
                     {
@@ -50,7 +50,7 @@ namespace STM32_Solar_Tracker_Control_Panel
                         break;
                     }
                 }
-                else if (receiveDataDeviceType == device_type.Sensor.ToString())
+                else if (receiveDataDeviceType == device_type.SEN.ToString())
                 {
                     if (d is ISensor && d.Number == receiveDataDeviceNumber)
                     {

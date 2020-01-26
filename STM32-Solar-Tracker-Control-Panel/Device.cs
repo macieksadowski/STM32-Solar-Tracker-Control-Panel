@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace STM32_Solar_Tracker_Control_Panel
 {
 
-    public enum device_type { Led, Servo,Sensor };
+    public enum device_type { LED, SRV,SEN };
     public class Device
     {
         public PictureBox pictureBox;
