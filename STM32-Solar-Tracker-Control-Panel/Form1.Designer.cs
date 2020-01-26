@@ -57,65 +57,62 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAuto = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.led2StatusLabel = new System.Windows.Forms.Label();
-            this.led4StatusLabel = new System.Windows.Forms.Label();
-            this.ServoStatusLabel = new System.Windows.Forms.Label();
-            this.Sensor2StatusLabel = new System.Windows.Forms.Label();
-            this.Sensor1StatusLabel = new System.Windows.Forms.Label();
-            this.led5StatusLabel = new System.Windows.Forms.Label();
-            this.led3StatusLabel = new System.Windows.Forms.Label();
-            this.led1StatusLabel = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataPanel = new System.Windows.Forms.Panel();
+            this.led1StatusLabel = new System.Windows.Forms.Label();
+            this.led2StatusLabel = new System.Windows.Forms.Label();
+            this.led3StatusLabel = new System.Windows.Forms.Label();
+            this.led4StatusLabel = new System.Windows.Forms.Label();
+            this.led5StatusLabel = new System.Windows.Forms.Label();
+            this.ServoStatusLabel = new System.Windows.Forms.Label();
+            this.Sensor1StatusLabel = new System.Windows.Forms.Label();
+            this.Sensor2StatusLabel = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ledPanel = new System.Windows.Forms.Panel();
             this.ledSym1 = new System.Windows.Forms.PictureBox();
             this.ledSym2 = new System.Windows.Forms.PictureBox();
-            this.ledSym3 = new System.Windows.Forms.PictureBox();
             this.ledSym4 = new System.Windows.Forms.PictureBox();
+            this.ledSym3 = new System.Windows.Forms.PictureBox();
             this.ledSym5 = new System.Windows.Forms.PictureBox();
             this.armSym = new System.Windows.Forms.PictureBox();
             this.tabManual = new System.Windows.Forms.TabPage();
             this.Receive = new System.Windows.Forms.GroupBox();
             this.receiveField = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.valueOptionLed = new System.Windows.Forms.GroupBox();
-            this.btnOFF = new System.Windows.Forms.RadioButton();
-            this.btnON = new System.Windows.Forms.RadioButton();
-            this.valueOptionServo = new System.Windows.Forms.GroupBox();
-            this.valueBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.valueScrollBar = new System.Windows.Forms.TrackBar();
             this.deviceNumberList = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.deviceTypeComboBox = new System.Windows.Forms.ComboBox();
             this.btnSend = new System.Windows.Forms.Button();
+            this.valueOptionServo = new System.Windows.Forms.GroupBox();
+            this.valueBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.valueScrollBar = new System.Windows.Forms.TrackBar();
+            this.valueOptionLed = new System.Windows.Forms.GroupBox();
+            this.btnOFF = new System.Windows.Forms.RadioButton();
+            this.btnON = new System.Windows.Forms.RadioButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabAuto.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.dataPanel.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.ledPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ledSym1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledSym2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ledSym3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledSym4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ledSym3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledSym5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.armSym)).BeginInit();
             this.tabManual.SuspendLayout();
             this.Receive.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.valueOptionLed.SuspendLayout();
             this.valueOptionServo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.valueScrollBar)).BeginInit();
+            this.valueOptionLed.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // serialPort1
-            // 
-            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // menuStrip1
             // 
@@ -303,59 +300,6 @@
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
-            // flowLayoutPanel1
-            // 
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            // 
-            // led2StatusLabel
-            // 
-            resources.ApplyResources(this.led2StatusLabel, "led2StatusLabel");
-            this.led2StatusLabel.Name = "led2StatusLabel";
-            // 
-            // led4StatusLabel
-            // 
-            resources.ApplyResources(this.led4StatusLabel, "led4StatusLabel");
-            this.led4StatusLabel.Name = "led4StatusLabel";
-            // 
-            // ServoStatusLabel
-            // 
-            resources.ApplyResources(this.ServoStatusLabel, "ServoStatusLabel");
-            this.ServoStatusLabel.Name = "ServoStatusLabel";
-            // 
-            // Sensor2StatusLabel
-            // 
-            resources.ApplyResources(this.Sensor2StatusLabel, "Sensor2StatusLabel");
-            this.Sensor2StatusLabel.Name = "Sensor2StatusLabel";
-            // 
-            // Sensor1StatusLabel
-            // 
-            resources.ApplyResources(this.Sensor1StatusLabel, "Sensor1StatusLabel");
-            this.Sensor1StatusLabel.Name = "Sensor1StatusLabel";
-            // 
-            // led5StatusLabel
-            // 
-            resources.ApplyResources(this.led5StatusLabel, "led5StatusLabel");
-            this.led5StatusLabel.Name = "led5StatusLabel";
-            // 
-            // led3StatusLabel
-            // 
-            resources.ApplyResources(this.led3StatusLabel, "led3StatusLabel");
-            this.led3StatusLabel.Name = "led3StatusLabel";
-            // 
-            // led1StatusLabel
-            // 
-            resources.ApplyResources(this.led1StatusLabel, "led1StatusLabel");
-            this.led1StatusLabel.Name = "led1StatusLabel";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.ledPanel);
-            this.groupBox1.Controls.Add(this.armSym);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
-            // 
             // dataPanel
             // 
             this.dataPanel.Controls.Add(this.led1StatusLabel);
@@ -368,6 +312,59 @@
             this.dataPanel.Controls.Add(this.Sensor2StatusLabel);
             resources.ApplyResources(this.dataPanel, "dataPanel");
             this.dataPanel.Name = "dataPanel";
+            // 
+            // led1StatusLabel
+            // 
+            resources.ApplyResources(this.led1StatusLabel, "led1StatusLabel");
+            this.led1StatusLabel.Name = "led1StatusLabel";
+            // 
+            // led2StatusLabel
+            // 
+            resources.ApplyResources(this.led2StatusLabel, "led2StatusLabel");
+            this.led2StatusLabel.Name = "led2StatusLabel";
+            // 
+            // led3StatusLabel
+            // 
+            resources.ApplyResources(this.led3StatusLabel, "led3StatusLabel");
+            this.led3StatusLabel.Name = "led3StatusLabel";
+            // 
+            // led4StatusLabel
+            // 
+            resources.ApplyResources(this.led4StatusLabel, "led4StatusLabel");
+            this.led4StatusLabel.Name = "led4StatusLabel";
+            // 
+            // led5StatusLabel
+            // 
+            resources.ApplyResources(this.led5StatusLabel, "led5StatusLabel");
+            this.led5StatusLabel.Name = "led5StatusLabel";
+            // 
+            // ServoStatusLabel
+            // 
+            resources.ApplyResources(this.ServoStatusLabel, "ServoStatusLabel");
+            this.ServoStatusLabel.Name = "ServoStatusLabel";
+            // 
+            // Sensor1StatusLabel
+            // 
+            resources.ApplyResources(this.Sensor1StatusLabel, "Sensor1StatusLabel");
+            this.Sensor1StatusLabel.Name = "Sensor1StatusLabel";
+            // 
+            // Sensor2StatusLabel
+            // 
+            resources.ApplyResources(this.Sensor2StatusLabel, "Sensor2StatusLabel");
+            this.Sensor2StatusLabel.Name = "Sensor2StatusLabel";
+            // 
+            // flowLayoutPanel1
+            // 
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ledPanel);
+            this.groupBox1.Controls.Add(this.armSym);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
             // 
             // ledPanel
             // 
@@ -393,19 +390,19 @@
             this.ledSym2.Name = "ledSym2";
             this.ledSym2.TabStop = false;
             // 
-            // ledSym3
-            // 
-            this.ledSym3.Image = global::STM32_Solar_Tracker_Control_Panel.Properties.Resources.led;
-            resources.ApplyResources(this.ledSym3, "ledSym3");
-            this.ledSym3.Name = "ledSym3";
-            this.ledSym3.TabStop = false;
-            // 
             // ledSym4
             // 
             this.ledSym4.Image = global::STM32_Solar_Tracker_Control_Panel.Properties.Resources.led;
             resources.ApplyResources(this.ledSym4, "ledSym4");
             this.ledSym4.Name = "ledSym4";
             this.ledSym4.TabStop = false;
+            // 
+            // ledSym3
+            // 
+            this.ledSym3.Image = global::STM32_Solar_Tracker_Control_Panel.Properties.Resources.led;
+            resources.ApplyResources(this.ledSym3, "ledSym3");
+            this.ledSym3.Name = "ledSym3";
+            this.ledSym3.TabStop = false;
             // 
             // ledSym5
             // 
@@ -455,60 +452,6 @@
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
-            // valueOptionLed
-            // 
-            this.valueOptionLed.Controls.Add(this.btnOFF);
-            this.valueOptionLed.Controls.Add(this.btnON);
-            resources.ApplyResources(this.valueOptionLed, "valueOptionLed");
-            this.valueOptionLed.Name = "valueOptionLed";
-            this.valueOptionLed.TabStop = false;
-            this.valueOptionLed.MouseHover += new System.EventHandler(this.valueOptionLed_MouseHover);
-            // 
-            // btnOFF
-            // 
-            resources.ApplyResources(this.btnOFF, "btnOFF");
-            this.btnOFF.Name = "btnOFF";
-            this.btnOFF.TabStop = true;
-            this.btnOFF.UseVisualStyleBackColor = true;
-            this.btnOFF.Click += new System.EventHandler(this.ValueBox_TextChanged);
-            // 
-            // btnON
-            // 
-            resources.ApplyResources(this.btnON, "btnON");
-            this.btnON.Name = "btnON";
-            this.btnON.TabStop = true;
-            this.btnON.UseVisualStyleBackColor = true;
-            this.btnON.Click += new System.EventHandler(this.ValueBox_TextChanged);
-            // 
-            // valueOptionServo
-            // 
-            this.valueOptionServo.Controls.Add(this.valueBox);
-            this.valueOptionServo.Controls.Add(this.label4);
-            this.valueOptionServo.Controls.Add(this.valueScrollBar);
-            resources.ApplyResources(this.valueOptionServo, "valueOptionServo");
-            this.valueOptionServo.Name = "valueOptionServo";
-            this.valueOptionServo.TabStop = false;
-            this.valueOptionServo.MouseHover += new System.EventHandler(this.valueOptionServo_MouseHover);
-            // 
-            // valueBox
-            // 
-            this.valueBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.valueBox, "valueBox");
-            this.valueBox.Name = "valueBox";
-            this.valueBox.ReadOnly = true;
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
-            // 
-            // valueScrollBar
-            // 
-            resources.ApplyResources(this.valueScrollBar, "valueScrollBar");
-            this.valueScrollBar.Maximum = 180;
-            this.valueScrollBar.Name = "valueScrollBar";
-            this.valueScrollBar.ValueChanged += new System.EventHandler(this.ValueBox_TextChanged);
-            // 
             // deviceNumberList
             // 
             this.deviceNumberList.FormattingEnabled = true;
@@ -543,6 +486,67 @@
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
+            // valueOptionServo
+            // 
+            this.valueOptionServo.Controls.Add(this.valueBox);
+            this.valueOptionServo.Controls.Add(this.label4);
+            this.valueOptionServo.Controls.Add(this.valueScrollBar);
+            resources.ApplyResources(this.valueOptionServo, "valueOptionServo");
+            this.valueOptionServo.Name = "valueOptionServo";
+            this.valueOptionServo.TabStop = false;
+            this.valueOptionServo.MouseHover += new System.EventHandler(this.valueOptionServo_MouseHover);
+            // 
+            // valueBox
+            // 
+            this.valueBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.valueBox, "valueBox");
+            this.valueBox.Name = "valueBox";
+            this.valueBox.ReadOnly = true;
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // valueScrollBar
+            // 
+            resources.ApplyResources(this.valueScrollBar, "valueScrollBar");
+            this.valueScrollBar.Maximum = 180;
+            this.valueScrollBar.Name = "valueScrollBar";
+            this.valueScrollBar.ValueChanged += new System.EventHandler(this.ValueBox_TextChanged);
+            // 
+            // valueOptionLed
+            // 
+            this.valueOptionLed.Controls.Add(this.btnOFF);
+            this.valueOptionLed.Controls.Add(this.btnON);
+            resources.ApplyResources(this.valueOptionLed, "valueOptionLed");
+            this.valueOptionLed.Name = "valueOptionLed";
+            this.valueOptionLed.TabStop = false;
+            this.valueOptionLed.MouseHover += new System.EventHandler(this.valueOptionLed_MouseHover);
+            // 
+            // btnOFF
+            // 
+            resources.ApplyResources(this.btnOFF, "btnOFF");
+            this.btnOFF.Name = "btnOFF";
+            this.btnOFF.TabStop = true;
+            this.btnOFF.UseVisualStyleBackColor = true;
+            this.btnOFF.Click += new System.EventHandler(this.ValueBox_TextChanged);
+            // 
+            // btnON
+            // 
+            resources.ApplyResources(this.btnON, "btnON");
+            this.btnON.Name = "btnON";
+            this.btnON.TabStop = true;
+            this.btnON.UseVisualStyleBackColor = true;
+            this.btnON.Click += new System.EventHandler(this.ValueBox_TextChanged);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -554,7 +558,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.menuStrip1.ResumeLayout(false);
@@ -564,14 +568,14 @@
             this.tabControl1.ResumeLayout(false);
             this.tabAuto.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             this.dataPanel.ResumeLayout(false);
             this.dataPanel.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ledPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ledSym1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledSym2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ledSym3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledSym4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ledSym3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledSym5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.armSym)).EndInit();
             this.tabManual.ResumeLayout(false);
@@ -579,11 +583,11 @@
             this.Receive.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.valueOptionLed.ResumeLayout(false);
-            this.valueOptionLed.PerformLayout();
             this.valueOptionServo.ResumeLayout(false);
             this.valueOptionServo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.valueScrollBar)).EndInit();
+            this.valueOptionLed.ResumeLayout(false);
+            this.valueOptionLed.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -652,6 +656,7 @@
         private System.Windows.Forms.Label led1StatusLabel;
         private System.Windows.Forms.Panel ledPanel;
         private System.Windows.Forms.Panel dataPanel;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

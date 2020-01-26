@@ -5,67 +5,81 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using System.IO.Ports;
-
+using System.Text.RegularExpressions;
 
 namespace STM32_Solar_Tracker_Control_Panel
 {
+
+
     public partial class Form1 : Form
     {
-       
-        delegate void receivingDelegate();
-        receivingDelegate receivingDelegate1;
+ 
         List<Device> devices;
-        
-         
-
+        String receivedData;
+   
         private void receiveText()
         {
-            String receivedData = serialPort1.ReadLine();
-            receiveField.AppendText(receivedData + "\n");
-            String[] substrings = receivedData.Split(' ');
-            String receiveDataDeviceType = substrings[0];
-            String[] substrings2 = substrings[1].Split('=');
-            int receiveDataDeviceNumber = Convert.ToInt32(substrings2[0]);
-            int receiveDataValue = Convert.ToInt32(substrings2[1]);
-            foreach (Device d in devices)
+            
+            Regex regReceive = new Regex("[A-Z]{3}\\s\\d=\\d{3}");
+            
+            receiveField.AppendText(receivedData + "\r\n");
+            try
             {
-                if(receiveDataDeviceType == device_type.LED.ToString())
+                if (regReceive.IsMatch(receivedData))
                 {
-                    if(d is ILed && d.Number == receiveDataDeviceNumber)
+                    String[] substrings = receivedData.Split(' ');
+                    String receiveDataDeviceType = substrings[0];
+                    String[] substrings2 = substrings[1].Split('=');
+                    int receiveDataDeviceNumber = Convert.ToInt32(substrings2[0]);
+                    int receiveDataValue = Convert.ToInt32(substrings2[1]);
+                    foreach (Device d in devices)
                     {
-                        d.Receive(receiveDataValue);
-                        
-                        break;
-                    }
-                }
-                else if (receiveDataDeviceType == device_type.SRV.ToString())
-                {
-                    if (d is IServo && d.Number == receiveDataDeviceNumber)
-                    {
-                        Invalidate();
-                        d.Receive(receiveDataValue);
-                        break;
-                    }
-                }
-                else if (receiveDataDeviceType == device_type.SEN.ToString())
-                {
-                    if (d is ISensor && d.Number == receiveDataDeviceNumber)
-                    {
-                        d.Receive(receiveDataValue);
-                        break;
+                        if (receiveDataDeviceType == device_type.LED.ToString())
+                        {
+                            if (d is ILed && d.Number == receiveDataDeviceNumber)
+                            {
+                                d.Receive(receiveDataValue);
+
+                                break;
+                            }
+                        }
+                        else if (receiveDataDeviceType == device_type.SRV.ToString())
+                        {
+                            if (d is IServo && d.Number == receiveDataDeviceNumber)
+                            {
+                                armSym.Refresh();
+                                d.Receive(receiveDataValue);
+                                break;
+                            }
+                        }
+                        else if (receiveDataDeviceType == device_type.SEN.ToString())
+                        {
+                            if (d is ISensor && d.Number == receiveDataDeviceNumber)
+                            {
+                                d.Receive(receiveDataValue);
+                                break;
+                            }
+                        }
                     }
                 }
             }
+            catch(Exception exc)
+            {
 
-
+            }
+ 
         }
 
         private void closeConnection()
         {
-            serialPort1.Close();
+            if(serialPort1.IsOpen)
+            {  
+                backgroundWorker1.CancelAsync();
+                MessageBox.Show(this, "Connection with port " + serialPort1.PortName + " closed.", "Info", MessageBoxButtons.OK);
+            }
             deviceNumberList.Hide();
             label1.Hide();
             label2.Hide();
@@ -83,6 +97,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             try
             {
                 serialPort1.Open();
+                backgroundWorker1.RunWorkerAsync();
                 MessageBox.Show("Succesfully connected with port " + serialPort1.PortName + " !", "Info", MessageBoxButtons.OK);
                 StatusLabel.Text = "Connected";
                 PortLabel.Text = serialPort1.PortName;
@@ -97,6 +112,7 @@ namespace STM32_Solar_Tracker_Control_Panel
         }
         public Form1()
         {
+            
             InitializeComponent();
             devices = new List<Device>()
             {
@@ -110,8 +126,9 @@ namespace STM32_Solar_Tracker_Control_Panel
             }
             
             
-            receivingDelegate1 = new receivingDelegate(receiveText);
+           
             closeConnection();
+            serialPort1.NewLine = "\r\n";
             serialPort1.PortName = "COM4";
             PortLabel.Text = serialPort1.PortName;
             serialPort1.BaudRate = 9600;
@@ -140,8 +157,9 @@ namespace STM32_Solar_Tracker_Control_Panel
         {
             if(serialPort1.IsOpen)
             {
-                MessageBox.Show(this, "Connection with port " + serialPort1.PortName + " closed.", "Info", MessageBoxButtons.OK);
-                closeConnection(); 
+                closeConnection();
+                
+                 
             }
             else
             {
@@ -150,19 +168,7 @@ namespace STM32_Solar_Tracker_Control_Panel
 
         }
 
-        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
-        {
-            receiveField.Invoke(receivingDelegate1);
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (serialPort1.IsOpen)
-            {
-                closeConnection();
-                MessageBox.Show(this, "Connection with port " + serialPort1.PortName + " closed.", "Info", MessageBoxButtons.OK);
-            }
-        }
+       
 
         private void portToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -269,8 +275,9 @@ namespace STM32_Solar_Tracker_Control_Panel
 
             if (serialPort1.IsOpen)
             {
+                
                 closeConnection();
-                MessageBox.Show(this, "Connection with port " + serialPort1.PortName + " closed.", "Info", MessageBoxButtons.OK);
+                
             }
             this.Close();
         }
@@ -302,6 +309,48 @@ namespace STM32_Solar_Tracker_Control_Panel
         {
             (devices[0] as IServo).RedrawArm(sender, e);
             
+        }
+
+        private void Form1_FormClosing(object sender, FormClosedEventArgs e)
+        {
+            
+            if (serialPort1.IsOpen)
+            {
+                
+                closeConnection();
+               
+            }
+ 
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            String receivedData;
+            do
+            {
+                if(backgroundWorker1.CancellationPending)
+                {
+                    serialPort1.Close();
+                    break;
+                }
+                else
+                {
+                    receivedData = serialPort1.ReadLine();
+                    (sender as BackgroundWorker).ReportProgress(0, receivedData);
+
+                }
+                //System.Threading.Thread.Sleep(10);
+            } while (true);
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            if (!backgroundWorker1.CancellationPending)
+            {
+                receivedData = e.UserState as String;
+                receiveText();
+            }
+                
         }
 
 
