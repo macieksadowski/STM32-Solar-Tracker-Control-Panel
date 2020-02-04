@@ -33,7 +33,7 @@
   <Class Name="STM32_Solar_Tracker_Control_Panel.Sensor">
     <Position X="3" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAQAAAgAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAgAAAAAAA=</HashCode>
       <FileName>Sensor.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

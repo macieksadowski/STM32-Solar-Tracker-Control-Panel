@@ -506,6 +506,7 @@
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.Name = "label4";
             // 
             // valueScrollBar
@@ -514,6 +515,7 @@
             this.valueScrollBar.Maximum = 180;
             this.valueScrollBar.Name = "valueScrollBar";
             this.valueScrollBar.ValueChanged += new System.EventHandler(this.ValueBox_TextChanged);
+            this.valueScrollBar.MouseHover += new System.EventHandler(this.valueOptionServo_MouseHover);
             // 
             // valueOptionLed
             // 
