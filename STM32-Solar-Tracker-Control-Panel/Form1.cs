@@ -20,14 +20,14 @@ namespace STM32_Solar_Tracker_Control_Panel
         List<Device> devices;
         String receivedData;
    
-        /*
+        /**
          * @brief   receiveText method updates information about device from message
          *          received from serial port.
         */
         private void receiveText()
         {
             
-            Regex regReceive = new Regex(@"[A-Z]{3}\s\d=\d{3}"); //!< i.e. "LED 1=001:
+            Regex regReceive = new Regex(@"[A-Z]{3}\s\d=\d"); //!< i.e. "LED 1=001:
             
             receiveField.AppendText(receivedData + "\r\n");
             try
@@ -77,7 +77,7 @@ namespace STM32_Solar_Tracker_Control_Panel
  
         }
 
-        /*
+        /**
          * @brief   closeConnection method disconnects serial port and updates window apperance
          * @retval  none
         */
@@ -94,6 +94,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             deviceTypeComboBox.Hide();
             valueOptionLed.Hide();
             valueOptionServo.Hide();
+            groupBox1.Hide();
             btnSend.Hide();
             
             StatusLabel.Text = "Disconnected";
@@ -101,7 +102,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             
         }
 
-        /* @brief   openConnection method connects serial port and updates window apperance
+        /** @brief   openConnection method connects serial port and updates window apperance
          * @desc    In case of connection error, appropriate message will be displayed
          * @retval  None
          */
@@ -115,7 +116,17 @@ namespace STM32_Solar_Tracker_Control_Panel
                 StatusLabel.Text = "Connected";
                 PortLabel.Text = serialPort1.PortName;
                 label1.Show();
+                groupBox1.Show();
                 deviceTypeComboBox.Show();
+                foreach(Device d in devices)
+                {
+                    if(d is ILed)
+                    {
+                        serialPort1.WriteLine((d as ILed).Off());
+                    }
+                }
+                serialPort1.WriteLine((devices[5] as ILed).On());
+                serialPort1.WriteLine("AUT 1=001");
                 connectToolStripMenuItem.Text = "Disconnect";
             }
             catch (Exception exc)
@@ -124,7 +135,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             }
         }
 
-        /*
+        /**
          * @brief   Form1 constructor creates new window
          * @retval  None
         */
@@ -135,8 +146,8 @@ namespace STM32_Solar_Tracker_Control_Panel
             devices = new List<Device>()
             {
                 new Servo(1,armSym,dataPanel.Controls[5] as Label),
-                new Sensor(1,dataPanel.Controls[6] as Label),
-                new Sensor(2,dataPanel.Controls[7] as Label),
+                new Sensor(1,Sensor1StatusLabel),
+                new Sensor(2,Sensor2StatusLabel),
             };
             for(int i=0;i<ledPanel.Controls.Count;i++)
             {
@@ -171,7 +182,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             
         }
 
-        /*
+        /**
          * @brief   Opening/closing UART connection after button click
          * @retval  None
         */
@@ -191,7 +202,7 @@ namespace STM32_Solar_Tracker_Control_Panel
         }
 
        
-        /*
+        /**
          * @brief   Display port names
         */
         private void portToolStripMenuItem_Click(object sender, EventArgs e)
@@ -202,7 +213,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             statusStrip1.Refresh();
         }
 
-        /*
+        /**
          *  @brief  Saves selected port name and updates status
          */
         private void portToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -213,7 +224,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             
         }
 
-        /*
+        /**
          * @brief   Saves selected baudrate
          */
         private void speedToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -226,7 +237,7 @@ namespace STM32_Solar_Tracker_Control_Panel
         
         //MANUAL
 
-        /*
+        /**
          * @brief   This function shows available devices
          * @desc    With every call, this function updates available devices of selected type
          * @reval   None
@@ -270,7 +281,7 @@ namespace STM32_Solar_Tracker_Control_Panel
                 
         }
 
-        /*
+        /**
          * @brief   If servo angle was selected from scrollbar, this method will update message 
          *          to send via UARD
          * @retval  None
@@ -282,7 +293,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             
         }
 
-        /*
+        /**
          * @brief   If Send button was clicked, send prepared command via UART
          * @retval  None
         */
@@ -314,7 +325,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             }
         }
 
-        /*
+        /**
          * @brief   If file->close button was clicked, close connection and then destroy window
          * @retval None
         */
@@ -330,7 +341,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             this.Close();
         }
         
-        /*
+        /**
          * @brief   Allows user to change value of servo angle on scrollbar, after focusing on it
          *          with cursor (steering with arrows, pgup/pgdn and mousebar)
         */
@@ -340,7 +351,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             valueScrollBar.Select();
         }
 
-        /*
+        /**
          * @brief   After focusing on LED, this function switches it's default option to ON
          */
         private void valueOptionLed_MouseHover(object sender, EventArgs e)
@@ -360,7 +371,7 @@ namespace STM32_Solar_Tracker_Control_Panel
            
         }
 
-        /*
+        /**
          * @brief   Draws servomechanism arm
          * @retval  None
          */
@@ -370,7 +381,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             
         }
 
-        /*
+        /**
          * @brief   If exit button was clicked, close connection and then destroy window
          * @retval  None
         */
@@ -386,7 +397,7 @@ namespace STM32_Solar_Tracker_Control_Panel
  
         }
 
-        /*
+        /**
          * @brief   Listen for incoming UART messages on another thread
          * @desc    If function received message, pass it do ProgressChanged func
          * @retval  None
@@ -411,7 +422,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             } while (true);
         }
 
-        /*
+        /**
          * @brief   This function passes received message from background thread to main thread
          * @retval  None
          */
@@ -423,6 +434,61 @@ namespace STM32_Solar_Tracker_Control_Panel
                 receiveText();
             }
                 
+        }
+
+        /**
+         * @brief   If Auto or Manual Tab selected, send UART communicate about selected mode
+         * @retval  None
+        */
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 1) serialPort1.WriteLine("AUT 1=000");
+            else if(tabControl1.SelectedIndex == 0) serialPort1.WriteLine("AUT 1=001");
+        }
+
+        /**
+         * @brief   If Led Symbol was clicked, send prepared command via UART to toggle state of selected LED
+         * @retval  None
+        */
+        private void ledSym1_Click(object sender, EventArgs e)
+        {
+            serialPort1.WriteLine((devices[3] as ILed).Toggle());
+        }
+
+        /**
+         * @brief   If Led Symbol was clicked, send prepared command via UART to toggle state of selected LED
+         * @retval  None
+        */
+        private void ledSym2_Click(object sender, EventArgs e)
+        {
+            serialPort1.WriteLine((devices[4] as ILed).Toggle());
+        }
+
+        /**
+         * @brief   If Led Symbol was clicked, send prepared command via UART to toggle state of selected LED
+         * @retval  None
+        */
+        private void ledSym4_Click(object sender, EventArgs e)
+        {
+            serialPort1.WriteLine((devices[6] as ILed).Toggle());
+        }
+
+        /**
+         * @brief   If Led Symbol was clicked, send prepared command via UART to toggle state of selected LED
+         * @retval  None
+        */
+        private void ledSym3_Click(object sender, EventArgs e)
+        {
+            serialPort1.WriteLine((devices[5] as ILed).Toggle());
+        }
+
+        /**
+         * @brief   If Led Symbol was clicked, send prepared command via UART to toggle state of selected LED
+         * @retval  None
+        */
+        private void ledSym5_Click(object sender, EventArgs e)
+        {
+            serialPort1.WriteLine((devices[7] as ILed).Toggle());
         }
 
 

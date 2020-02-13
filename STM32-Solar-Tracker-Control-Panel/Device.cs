@@ -33,7 +33,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             
         }
 
-        /*
+        /**
          * @brief   Method ToString returns device name as string
          * @retval  device number as string
         */
@@ -42,7 +42,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             return name;
         }
 
-        /*
+        /**
          * @brief   Method Receive is implemented in inherited classes
          * @param   data stores information about device data(ie. servo position)
         */

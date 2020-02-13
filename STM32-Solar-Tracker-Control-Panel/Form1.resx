@@ -716,54 +716,6 @@
   <data name="&gt;&gt;ledSym2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="ledSym4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ledSym4.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        R0lGODlhugC6AIEAAICAgAAAAP8AAAAAACH/C05FVFNDQVBFMi4wAwEBAAAh+QQBAAACACwAAAAAugC6
-        AAAI/wAFCBxIsKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIsaPHjyBDihxJsqTJkyhTqlzJsqXLlzBj
-        ypxJs6bNmzhz6tzJs6fPn0CDCh1KtKjRo0h5BljKtKlTpkmjPnwKoKrVq1itPpXKVUDTrGDDim3adehX
-        sWjTgiVbVidTtXDjrl3aluZbuXjzaqVbt+VSvYADA+Db9+RfwYj1Ei4c8nDix3kXM97oGLJlvJInV6x8
-        ubPczJqnBvBMGjDo0ApHl16tGHVDzqxjqz3t2qvs25FrF4SNu/fYALpt+x4eF7hr1cSTpzU+mbfy51dp
-        R0UOvXpY5mWpW9+OFbtU7dzDV5X1jhS8ePHki5o/jz7pevbtjb6HH98s/fvd7ePfPz7ofP719fQfgNyl
-        h9OABBYoYIIJGjgTggyG52BMEEa43YQvVWjhhTdpuCGHNXn4YXUYqiTiiCQ+iKKFJZp04orQtUjSizDG
-        CBONNSonY2M5sugSjj0mt6NHQAYpJEtFGjnckJQp6WNKSTrpG5MYRSnllChZeSVuVP9utuWTM34ZYZcT
-        aSmmbGRGZOaZaIbJZoNuvglgmg6tKSdrdDJk552l5bnQnnx65mdqgc7JY6GGfgQoopcNetCijELmqEGQ
-        RprYpARVaumlRG66H6YCaeppYKAKNyp8pYp6am4dqbrqZ62+Sh+mrspaHEe12jobrrqeR2uvAVYJrIS8
-        DguiRrkam9WvyqbYZLM2PgutjsVOe6S01i5ZbbZYYsstl9t+exuz4oLrbbl4xopubKmuy26n7q7Wbrx9
-        wkuvoPbe26ii+u7Lb7+SgpSssqWGCnDAAh+MWMEDDQwswwYrTKpIDvcKccQSYxZnxreOVLGsFzfMcccb
-        jzyWiyYY74pyytdlyXLLLr8cnYkyz0xzzSEn9DGj3znrLHPPPr8MdNAmD030yEYfLXHSSivMdNP9Pk2o
-        0zbt/KXUfx6MtZ5Ru9W11/RuPVW8YkNkNYxlm71u2mqLy7aa374t0dljHkU3gXJ7SfB3xuYtrMVt3e1r
-        X4IrWJhzgUrHVeHXosZ4t7UhvqXijD0ub3CUWt6o3z9ejfmfmpPK+YOhfzZ61aWjRfnnOqfe3ekCur46
-        66J9CjtRd0k4O+0W5a7j7rwj6zu7UAX/4/CSFm+8XU4p5tTyPz0l/fPQV2/99dhnr/323Hfv/ffghy/+
-        +OSXb/756Kev/voLBQQAOw==
-</value>
-  </data>
-  <data name="ledSym4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>315, 3</value>
-  </data>
-  <data name="ledSym4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 47</value>
-  </data>
-  <data name="ledSym4.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="ledSym4.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ledSym4.Name" xml:space="preserve">
-    <value>ledSym4</value>
-  </data>
-  <data name="&gt;&gt;ledSym4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ledSym4.Parent" xml:space="preserve">
-    <value>ledPanel</value>
-  </data>
-  <data name="&gt;&gt;ledSym4.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="ledSym3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -789,7 +741,7 @@
 </value>
   </data>
   <data name="ledSym3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 3</value>
+    <value>212, 3</value>
   </data>
   <data name="ledSym3.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 47</value>
@@ -810,6 +762,54 @@
     <value>ledPanel</value>
   </data>
   <data name="&gt;&gt;ledSym3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ledSym4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ledSym4.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhugC6AIEAAICAgAAAAP8AAAAAACH/C05FVFNDQVBFMi4wAwEBAAAh+QQBAAACACwAAAAAugC6
+        AAAI/wAFCBxIsKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIsaPHjyBDihxJsqTJkyhTqlzJsqXLlzBj
+        ypxJs6bNmzhz6tzJs6fPn0CDCh1KtKjRo0h5BljKtKlTpkmjPnwKoKrVq1itPpXKVUDTrGDDim3adehX
+        sWjTgiVbVidTtXDjrl3aluZbuXjzaqVbt+VSvYADA+Db9+RfwYj1Ei4c8nDix3kXM97oGLJlvJInV6x8
+        ubPczJqnBvBMGjDo0ApHl16tGHVDzqxjqz3t2qvs25FrF4SNu/fYALpt+x4eF7hr1cSTpzU+mbfy51dp
+        R0UOvXpY5mWpW9+OFbtU7dzDV5X1jhS8ePHki5o/jz7pevbtjb6HH98s/fvd7ePfPz7ofP719fQfgNyl
+        h9OABBYoYIIJGjgTggyG52BMEEa43YQvVWjhhTdpuCGHNXn4YXUYqiTiiCQ+iKKFJZp04orQtUjSizDG
+        CBONNSonY2M5sugSjj0mt6NHQAYpJEtFGjnckJQp6WNKSTrpG5MYRSnllChZeSVuVP9utuWTM34ZYZcT
+        aSmmbGRGZOaZaIbJZoNuvglgmg6tKSdrdDJk552l5bnQnnx65mdqgc7JY6GGfgQoopcNetCijELmqEGQ
+        RprYpARVaumlRG66H6YCaeppYKAKNyp8pYp6am4dqbrqZ62+Sh+mrspaHEe12jobrrqeR2uvAVYJrIS8
+        DguiRrkam9WvyqbYZLM2PgutjsVOe6S01i5ZbbZYYsstl9t+exuz4oLrbbl4xopubKmuy26n7q7Wbrx9
+        wkuvoPbe26ii+u7Lb7+SgpSssqWGCnDAAh+MWMEDDQwswwYrTKpIDvcKccQSYxZnxreOVLGsFzfMcccb
+        jzyWiyYY74pyytdlyXLLLr8cnYkyz0xzzSEn9DGj3znrLHPPPr8MdNAmD030yEYfLXHSSivMdNP9Pk2o
+        0zbt/KXUfx6MtZ5Ru9W11/RuPVW8YkNkNYxlm71u2mqLy7aa374t0dljHkU3gXJ7SfB3xuYtrMVt3e1r
+        X4IrWJhzgUrHVeHXosZ4t7UhvqXijD0ub3CUWt6o3z9ejfmfmpPK+YOhfzZ61aWjRfnnOqfe3ekCur46
+        66J9CjtRd0k4O+0W5a7j7rwj6zu7UAX/4/CSFm+8XU4p5tTyPz0l/fPQV2/99dhnr/323Hfv/ffghy/+
+        +OSXb/756Kev/voLBQQAOw==
+</value>
+  </data>
+  <data name="ledSym4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>318, 3</value>
+  </data>
+  <data name="ledSym4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 47</value>
+  </data>
+  <data name="ledSym4.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="ledSym4.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ledSym4.Name" xml:space="preserve">
+    <value>ledSym4</value>
+  </data>
+  <data name="&gt;&gt;ledSym4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ledSym4.Parent" xml:space="preserve">
+    <value>ledPanel</value>
+  </data>
+  <data name="&gt;&gt;ledSym4.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="ledSym5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -837,7 +837,7 @@
 </value>
   </data>
   <data name="ledSym5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>419, 3</value>
+    <value>406, 3</value>
   </data>
   <data name="ledSym5.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 47</value>

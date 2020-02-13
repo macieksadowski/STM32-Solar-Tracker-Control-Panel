@@ -71,9 +71,9 @@
             this.ledPanel = new System.Windows.Forms.Panel();
             this.ledSym1 = new System.Windows.Forms.PictureBox();
             this.ledSym2 = new System.Windows.Forms.PictureBox();
-            this.ledSym4 = new System.Windows.Forms.PictureBox();
             this.ledSym3 = new System.Windows.Forms.PictureBox();
             this.ledSym5 = new System.Windows.Forms.PictureBox();
+            this.ledSym4 = new System.Windows.Forms.PictureBox();
             this.armSym = new System.Windows.Forms.PictureBox();
             this.tabManual = new System.Windows.Forms.TabPage();
             this.Receive = new System.Windows.Forms.GroupBox();
@@ -102,9 +102,9 @@
             this.ledPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ledSym1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledSym2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ledSym4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledSym3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledSym5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ledSym4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.armSym)).BeginInit();
             this.tabManual.SuspendLayout();
             this.Receive.SuspendLayout();
@@ -283,6 +283,7 @@
             resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabAuto
             // 
@@ -370,8 +371,8 @@
             // 
             this.ledPanel.Controls.Add(this.ledSym1);
             this.ledPanel.Controls.Add(this.ledSym2);
-            this.ledPanel.Controls.Add(this.ledSym4);
             this.ledPanel.Controls.Add(this.ledSym3);
+            this.ledPanel.Controls.Add(this.ledSym4);
             this.ledPanel.Controls.Add(this.ledSym5);
             resources.ApplyResources(this.ledPanel, "ledPanel");
             this.ledPanel.Name = "ledPanel";
@@ -382,6 +383,7 @@
             resources.ApplyResources(this.ledSym1, "ledSym1");
             this.ledSym1.Name = "ledSym1";
             this.ledSym1.TabStop = false;
+            this.ledSym1.Click += new System.EventHandler(this.ledSym1_Click);
             // 
             // ledSym2
             // 
@@ -389,13 +391,7 @@
             resources.ApplyResources(this.ledSym2, "ledSym2");
             this.ledSym2.Name = "ledSym2";
             this.ledSym2.TabStop = false;
-            // 
-            // ledSym4
-            // 
-            this.ledSym4.Image = global::STM32_Solar_Tracker_Control_Panel.Properties.Resources.led;
-            resources.ApplyResources(this.ledSym4, "ledSym4");
-            this.ledSym4.Name = "ledSym4";
-            this.ledSym4.TabStop = false;
+            this.ledSym2.Click += new System.EventHandler(this.ledSym2_Click);
             // 
             // ledSym3
             // 
@@ -403,6 +399,7 @@
             resources.ApplyResources(this.ledSym3, "ledSym3");
             this.ledSym3.Name = "ledSym3";
             this.ledSym3.TabStop = false;
+            this.ledSym3.Click += new System.EventHandler(this.ledSym3_Click);
             // 
             // ledSym5
             // 
@@ -410,6 +407,15 @@
             resources.ApplyResources(this.ledSym5, "ledSym5");
             this.ledSym5.Name = "ledSym5";
             this.ledSym5.TabStop = false;
+            this.ledSym5.Click += new System.EventHandler(this.ledSym5_Click);
+            // 
+            // ledSym4
+            // 
+            this.ledSym4.Image = global::STM32_Solar_Tracker_Control_Panel.Properties.Resources.led;
+            resources.ApplyResources(this.ledSym4, "ledSym4");
+            this.ledSym4.Name = "ledSym4";
+            this.ledSym4.TabStop = false;
+            this.ledSym4.Click += new System.EventHandler(this.ledSym4_Click);
             // 
             // armSym
             // 
@@ -576,9 +582,9 @@
             this.ledPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ledSym1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledSym2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ledSym4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledSym3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ledSym5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ledSym4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.armSym)).EndInit();
             this.tabManual.ResumeLayout(false);
             this.Receive.ResumeLayout(false);

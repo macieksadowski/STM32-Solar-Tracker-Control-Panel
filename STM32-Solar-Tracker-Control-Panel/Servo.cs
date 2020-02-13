@@ -11,7 +11,7 @@ namespace STM32_Solar_Tracker_Control_Panel
     {
         private int angle=0;
         
-        /*
+        /**
         * @brief    Servo object constructor
         * @param number information about device number
         * @param pictureBox assigned to this object
@@ -22,7 +22,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             statusLabel.Text = "SERVO " + Number + " : ANGLE = " + angle;
         }
 
-        /*
+        /**
          * @brief   Returns actual Angle value
          * @retval  actual angle <0:180>
          */
@@ -32,7 +32,7 @@ namespace STM32_Solar_Tracker_Control_Panel
 
         }
         
-        /*
+        /**
         * @brief    This method returns UART command to control servomechanism
         * @param    angle to set on servo
         * @retval   returns UART command
@@ -58,7 +58,7 @@ namespace STM32_Solar_Tracker_Control_Panel
 
         }
 
-        /*
+        /**
          * @brief   Updates device
          * @param   data new parameters
          */
@@ -68,7 +68,7 @@ namespace STM32_Solar_Tracker_Control_Panel
             statusLabel.Text = "SERVO " + Number + " : ANGLE = "+angle;
         }
 
-        /*
+        /**
          * @brief   This method updates servomechanism visualization position
          * @param sender - contains a reference to the control/object that raised the event.
          * @param e - contains the event data.

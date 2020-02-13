@@ -1,0 +1,160 @@
+\hypertarget{class_s_t_m32___solar___tracker___control___panel_1_1_servo}{}\doxysection{S\+T\+M32\+\_\+\+Solar\+\_\+\+Tracker\+\_\+\+Control\+\_\+\+Panel.\+Servo Class Reference}
+\label{class_s_t_m32___solar___tracker___control___panel_1_1_servo}\index{STM32\_Solar\_Tracker\_Control\_Panel.Servo@{STM32\_Solar\_Tracker\_Control\_Panel.Servo}}
+Inheritance diagram for S\+T\+M32\+\_\+\+Solar\+\_\+\+Tracker\+\_\+\+Control\+\_\+\+Panel.\+Servo\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_s_t_m32___solar___tracker___control___panel_1_1_servo}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_t_m32___solar___tracker___control___panel_1_1_servo_af8d964a3bb4702831836cd2c5fe4e90e}{Servo}} (int number, Picture\+Box \mbox{\hyperlink{class_s_t_m32___solar___tracker___control___panel_1_1_device_af1e2253c49315d0d7371605e18d5da59}{picture\+Box}}, Label label)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_s_t_m32___solar___tracker___control___panel_1_1_servo}{Servo}} object constructor. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_s_t_m32___solar___tracker___control___panel_1_1_servo_a1138f203ec6d63dabd857a4cfa4141b0}{Set\+Angle}} (int angle)
+\begin{DoxyCompactList}\small\item\em This method returns U\+A\+RT command to control servomechanism. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_s_t_m32___solar___tracker___control___panel_1_1_servo_afb7fd6b6c92b64247745f67ef21cda1c}{Receive}} (int data)
+\begin{DoxyCompactList}\small\item\em Updates device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_t_m32___solar___tracker___control___panel_1_1_servo_acbcb4dbef1ebfb724875beb8a02f0463}{Redraw\+Arm}} (Object sender, Paint\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em This method updates servomechanism visualization position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_s_t_m32___solar___tracker___control___panel_1_1_servo_a999936d8061c5c20a4e8a48893f9ff95}{Angle}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns actual Angle value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 10 of file Servo.\+cs.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_t_m32___solar___tracker___control___panel_1_1_servo_af8d964a3bb4702831836cd2c5fe4e90e}\label{class_s_t_m32___solar___tracker___control___panel_1_1_servo_af8d964a3bb4702831836cd2c5fe4e90e}} 
+\index{STM32\_Solar\_Tracker\_Control\_Panel.Servo@{STM32\_Solar\_Tracker\_Control\_Panel.Servo}!Servo@{Servo}}
+\index{Servo@{Servo}!STM32\_Solar\_Tracker\_Control\_Panel.Servo@{STM32\_Solar\_Tracker\_Control\_Panel.Servo}}
+\doxysubsubsection{\texorpdfstring{Servo()}{Servo()}}
+{\footnotesize\ttfamily S\+T\+M32\+\_\+\+Solar\+\_\+\+Tracker\+\_\+\+Control\+\_\+\+Panel.\+Servo.\+Servo (\begin{DoxyParamCaption}\item[{int}]{number,  }\item[{Picture\+Box}]{picture\+Box,  }\item[{Label}]{label }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_s_t_m32___solar___tracker___control___panel_1_1_servo}{Servo}} object constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & information about device number \\
+\hline
+{\em picture\+Box} & assigned to this object \\
+\hline
+{\em label} & assigned to this object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 20 of file Servo.\+cs.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_t_m32___solar___tracker___control___panel_1_1_servo_afb7fd6b6c92b64247745f67ef21cda1c}\label{class_s_t_m32___solar___tracker___control___panel_1_1_servo_afb7fd6b6c92b64247745f67ef21cda1c}} 
+\index{STM32\_Solar\_Tracker\_Control\_Panel.Servo@{STM32\_Solar\_Tracker\_Control\_Panel.Servo}!Receive@{Receive}}
+\index{Receive@{Receive}!STM32\_Solar\_Tracker\_Control\_Panel.Servo@{STM32\_Solar\_Tracker\_Control\_Panel.Servo}}
+\doxysubsubsection{\texorpdfstring{Receive()}{Receive()}}
+{\footnotesize\ttfamily override void S\+T\+M32\+\_\+\+Solar\+\_\+\+Tracker\+\_\+\+Control\+\_\+\+Panel.\+Servo.\+Receive (\begin{DoxyParamCaption}\item[{int}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & new parameters \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_s_t_m32___solar___tracker___control___panel_1_1_device_a2bf21167c4cfe21adf0204f953b3d1d3}{S\+T\+M32\+\_\+\+Solar\+\_\+\+Tracker\+\_\+\+Control\+\_\+\+Panel.\+Device}}.
+
+
+
+Definition at line 65 of file Servo.\+cs.
+
+\mbox{\Hypertarget{class_s_t_m32___solar___tracker___control___panel_1_1_servo_acbcb4dbef1ebfb724875beb8a02f0463}\label{class_s_t_m32___solar___tracker___control___panel_1_1_servo_acbcb4dbef1ebfb724875beb8a02f0463}} 
+\index{STM32\_Solar\_Tracker\_Control\_Panel.Servo@{STM32\_Solar\_Tracker\_Control\_Panel.Servo}!RedrawArm@{RedrawArm}}
+\index{RedrawArm@{RedrawArm}!STM32\_Solar\_Tracker\_Control\_Panel.Servo@{STM32\_Solar\_Tracker\_Control\_Panel.Servo}}
+\doxysubsubsection{\texorpdfstring{RedrawArm()}{RedrawArm()}}
+{\footnotesize\ttfamily void S\+T\+M32\+\_\+\+Solar\+\_\+\+Tracker\+\_\+\+Control\+\_\+\+Panel.\+Servo.\+Redraw\+Arm (\begin{DoxyParamCaption}\item[{Object}]{sender,  }\item[{Paint\+Event\+Args}]{e }\end{DoxyParamCaption})}
+
+
+
+This method updates servomechanism visualization position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & -\/ contains a reference to the control/object that raised the event. \\
+\hline
+{\em e} & -\/ contains the event data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file Servo.\+cs.
+
+\mbox{\Hypertarget{class_s_t_m32___solar___tracker___control___panel_1_1_servo_a1138f203ec6d63dabd857a4cfa4141b0}\label{class_s_t_m32___solar___tracker___control___panel_1_1_servo_a1138f203ec6d63dabd857a4cfa4141b0}} 
+\index{STM32\_Solar\_Tracker\_Control\_Panel.Servo@{STM32\_Solar\_Tracker\_Control\_Panel.Servo}!SetAngle@{SetAngle}}
+\index{SetAngle@{SetAngle}!STM32\_Solar\_Tracker\_Control\_Panel.Servo@{STM32\_Solar\_Tracker\_Control\_Panel.Servo}}
+\doxysubsubsection{\texorpdfstring{SetAngle()}{SetAngle()}}
+{\footnotesize\ttfamily String S\+T\+M32\+\_\+\+Solar\+\_\+\+Tracker\+\_\+\+Control\+\_\+\+Panel.\+Servo.\+Set\+Angle (\begin{DoxyParamCaption}\item[{int}]{angle }\end{DoxyParamCaption})}
+
+
+
+This method returns U\+A\+RT command to control servomechanism. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & to set on servo \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em returns} & U\+A\+RT command \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \mbox{\hyperlink{interface_s_t_m32___solar___tracker___control___panel_1_1_i_servo_a2889410f3f6f8a363f6c1ee646917a2a}{S\+T\+M32\+\_\+\+Solar\+\_\+\+Tracker\+\_\+\+Control\+\_\+\+Panel.\+I\+Servo}}.
+
+
+
+Definition at line 40 of file Servo.\+cs.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_s_t_m32___solar___tracker___control___panel_1_1_servo_a999936d8061c5c20a4e8a48893f9ff95}\label{class_s_t_m32___solar___tracker___control___panel_1_1_servo_a999936d8061c5c20a4e8a48893f9ff95}} 
+\index{STM32\_Solar\_Tracker\_Control\_Panel.Servo@{STM32\_Solar\_Tracker\_Control\_Panel.Servo}!Angle@{Angle}}
+\index{Angle@{Angle}!STM32\_Solar\_Tracker\_Control\_Panel.Servo@{STM32\_Solar\_Tracker\_Control\_Panel.Servo}}
+\doxysubsubsection{\texorpdfstring{Angle}{Angle}}
+{\footnotesize\ttfamily int S\+T\+M32\+\_\+\+Solar\+\_\+\+Tracker\+\_\+\+Control\+\_\+\+Panel.\+Servo.\+Angle\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns actual Angle value. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em actual} & angle $<$0\+:180$>$ \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 30 of file Servo.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_servo_8cs}{Servo.\+cs}}\end{DoxyCompactItemize}
